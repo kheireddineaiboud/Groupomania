@@ -1,0 +1,720 @@
+@import "./utils/_variables.scss";
+@import "./utils/_mixins.scss";
+@import "./utils/_responsive.scss";
+
+/*Paramètres de la barre de navigation*/
+#root {
+  a{
+    img {
+      width: 50px;
+      margin: 0.6em;
+      border-radius: 50%;
+      border: 1px solid $main_color;
+      @include logo_link;
+    }
+  }
+  .mr-auto {
+    a {
+      font-weight: bold;
+      margin-left: 3em;
+    }
+  }
+}
+
+/*Paramètres du contenu de la page*/
+.container {
+  width: 90%;
+  margin: 1em auto;
+  padding: 2em;
+  @include flex_column;
+  h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.3em;
+    color: $primary_color;
+  }
+  h2 {
+    font-size: 0.9em;
+    text-align: center;
+    color: $primary_color;
+  }
+  p {
+    font-size: 0.9em;
+    text-align: center;
+    color: $second_color;
+    a {
+      font-size: 0.9em;
+      @include text_link;
+    }
+  }
+  .post-option {
+    margin: 2em;
+    @include flex-center;
+    button {
+      border: none;
+      margin: 1em;
+    }
+  }
+  .comment-card {
+    margin-top: 1.5em;
+    padding: 1.5em;
+    h2{
+      font-size: 1.2em;
+    }
+    h3 {
+      display: flex;
+      font-size: 0.9em;
+      a {
+        padding: 0em;
+        margin-left: 0.5em;;
+        color: $primary_color;
+        &:hover {
+          color: $text_link_color;
+        }
+      }
+    }
+  }
+}
+
+// paramètres de la page des articles
+.article-card {
+  display: flex;
+  box-shadow: $box_shadow;
+  margin: 1em;
+  padding: 1em;
+  img {
+    width: 10%;
+    height: 10%;
+    margin: 1em;
+    border-radius: 50%;
+    border: 1px solid $main_color;
+  }
+  .show-article {
+    margin: 0.5em;
+    h2 {
+      display: flex;
+      font-size: 1em;
+      color: $main_color;
+      a {
+        font-weight: bold;
+        padding: 0em;
+        margin-left: 0.5em;
+        color: $primary_color;
+        &:hover {
+          color: $text_link_color;
+        }
+      }
+    }
+    h3 {
+      font-size: 0.9em;
+      color: $second_color;
+      text-align: left;
+    }
+    p {
+      white-space: pre-line;
+      text-align: left;
+      color: $main_color;
+    }
+    #created-at {
+      font-size: 0.8em;
+      color: $second_color;
+    }
+    a {
+      color: $primary_color;
+      padding-left: 0em;
+      text-align: left;
+      &:hover {
+        color: $text_link_color;
+      }
+    }
+  }
+}
+
+// paramètres boutons et formulaire
+.form-submit{
+  margin: 1em;
+  @include flex_center;
+  .btn {
+    margin: 0.5em;
+  }
+}
+
+// affichage page utilisateur
+.user-page{
+  @include flex_space_between;
+  background-color: $body_color;
+  padding: 1.3em;
+  margin-top: 1.5em;
+  .images {
+    @include column;
+    justify-content: baseline;
+    width: 20%;
+    img{
+      width: 60%;
+      margin: 0em auto 0em auto;
+      border-radius: 50%;
+      border: 1px solid black;
+    }
+    button {
+      margin: 0.8em auto 0em auto;
+      width: 60%;
+      padding: 0em;
+    }
+  }
+  .show-article {
+    margin-left: 1em;
+    margin-right: 1em;
+    width: 60%;
+    h2 {
+      font-size: 1em;
+      font-weight: bold;
+      text-align: left;
+    }
+    p {
+      white-space: pre-line;
+      text-align: left;
+    }
+  }
+  .user-button {
+    @include column;
+    justify-content: right;
+    width: 20%;
+    padding: 0.5em;
+    box-shadow: $box_shadow;
+    p {
+      font-weight: bold;
+    }
+      .btn {
+        padding: 0em;
+        margin: 0.5em;
+    }
+  }
+}
+
+// affichage des articles sur les pages utilisateur
+.user-article {
+  background-color: $primary_color;
+  margin-top: Oem;
+  h2 {
+    font-size: 1.1em;
+    text-align: center;
+    font-weight: bold;
+    color: $body_color;
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+  p {
+    font-size: 0.9em;
+    text-align: left;
+    color: $second_color;
+  }
+  a {
+    font-size: 1em;
+    @include text_link;
+    color: $primary_color;
+  }
+  .user-articles {
+    box-shadow: $box_shadow;
+    background-color: $body_color;
+    margin: 1em;
+    padding: 1.2em;
+    a {
+      font-weight: bold;
+      padding: 0em 0em 0.5em 0em;
+      color: $primary_color;
+      &:hover {
+        color: $text_link_color;
+      }
+    }
+    p {
+      white-space: pre-line;
+      font-size: 1em;
+      margin-bottom: 0.6em;
+    }
+    h3 {
+      font-size: 0.8em;
+    }
+  }
+}
+
+// affichage contenu articles (page d'un article)
+.article-present {
+  box-shadow: $box_shadow;
+  display: flex;
+  img {
+    width: 10%;
+    height: 10%;
+    margin: 1em;
+    border-radius: 50%;
+    border: 1px solid $main_color;
+  }
+  .article-content {
+    margin-top: 1.5em;
+    padding: 1.5em;
+    width: 80%;
+    h2 {
+      display: flex;
+      font-size: 1em;
+      color: $main_color;
+      margin-bottom: 0.8em;
+      a {
+        font-weight: bold;
+        padding: 0em;
+        margin-left: 0.5em;
+        color: $primary_color;
+        &:hover {
+          color: $text_link_color;
+        }
+      }
+    }
+    p {
+      text-align: left;
+    }
+    .article-page {
+      margin: 1em 0em 0em 0em;
+      .show-article {
+        @include column;
+        justify-content: left;
+        margin-bottom: 0.5em;
+        width: 70%;
+        p {
+          white-space: pre-line;
+          text-align: left;
+          margin-bottom: 0.2em;
+        }
+        a {
+          padding: 0.5em 0em 0.6em 0em;
+          color: $primary_color;
+          font-size: 0.9em;
+          &:hover {
+            color: $text_link_color;
+          }
+        }
+      }
+      .article-button {
+        @include flex_center;
+        button {
+          margin: 0.7em;
+        }
+      }
+    }
+    .likes {
+      @include flex_center;
+      margin: 1em;
+      button {
+        border: none;
+        background-color: white;
+      }
+    }
+  }
+}
+
+.comment-div {
+  background-color: $primary_color;
+  h2 {
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 2em;
+    margin-bottom: 1.5em;
+    color: $body_color;
+  }
+  h3 {
+    font-size: 0.8em;
+    font-weight: bold;
+    color: $primary_color;
+  }
+  p {
+    text-align: left;
+  }
+  .post-comment {
+    box-shadow: $box_shadow;
+    background-color: $body_color;
+    @include flex_column;
+    margin: 2em 3em 2em 3em;
+    padding: 1em;
+    form {
+      input {
+        margin-left: 0.4em;
+      }
+    }
+    .form-submit {
+      margin: 0em 1em 0em 1em;
+      button {
+        margin: 0em;
+      }
+    }
+  }
+  .form-comment {
+    margin: 1em 4em 1em 4em;
+    background-color: $body_color;
+    padding: 0.5em;
+    box-shadow: $box_shadow;
+    display: flex;
+    img {
+      width: 6%;
+      height: 6%;
+      margin: 1em;
+      border-radius: 50%;
+      border: 1px solid $main_color;
+    }
+    .comment-card {
+      width: 80%;
+      margin: 0em;
+      h3 {
+        color: $second_color;
+        display: flex;
+        font-size: 0.9em;
+        a {
+          padding: 0em;
+          margin-left: 0.5em;
+        }
+      }
+      p {
+        font-size: 0.8em;
+      }
+      .content-comment {
+        font-size: 0.9em;
+        font-weight: bold;
+        white-space: pre-line;
+        margin-bottom: 0.5em;
+      }
+      .post-option {
+        margin: 0em;
+        a {
+          font-size: 0.8em;
+          padding: 0.5em;
+          color: $primary_color;
+          &:hover {
+            color: $text_link_color;
+          }
+        }
+      }
+    }
+  }
+}
+
+// page update image
+.update-image {
+  box-shadow: $box_shadow;
+  margin-top: 1.5em;
+  padding: 2em;
+  @include column;
+  .addPhotoForm {
+    display: flex;
+    margin: 1em;
+    input {
+      width: 50%;
+      margin-right: 1em;
+    }
+  }
+  a {
+    margin: 1em;
+    width: 30%;
+  }
+}
+
+// responsive
+// écrans moins de 360px
+@media #{$x_small_screen}
+{
+  .container {
+    width: 100%;
+    padding: 1.5em;
+    .comment-card {
+      h3 {
+        font-size: 0.8em;
+        @include column;
+        margin-bottom: 0.5em;
+        a {
+          margin: 0em;
+        }
+      }
+      p {
+        font-size: 1em;
+        margin-top : 2em;
+      }
+      .post-option {
+        margin: 0.5em auto auto auto;
+      }
+    }
+  }
+
+  //nav bar
+  #root {
+    .mr-auto {
+      a {
+        font-size: 0.8em;
+        margin-left: 0.7em;
+      }
+    }
+  }
+  // user page
+  .user-page{
+    @include flex_column;
+    .images {
+      margin: auto;
+      width: 60%;
+      img{
+        margin: 0.5em auto 0.5em auto;
+      }
+      button {
+        width: auto;
+        padding: 0.2em;
+      }
+    }
+    .show-article {
+      margin: 2em auto 2em auto;
+      width: 90%;
+    }
+    .user-button {
+      @include row;
+      justify-content: center;
+      box-shadow: none;
+      margin: auto;
+      width: 80%;
+    }
+  }
+
+  .update-image {
+    .addPhotoForm {
+      @include column;
+      input {
+        width: auto;
+        margin: 1em;
+      }
+      button {
+        width: 40%;
+        margin: auto;
+      }
+    }
+    a {
+      margin: auto;
+      width: 50%;
+    }
+  }
+
+  // tous les articles page
+  .article-card {
+    padding: 0em;
+    margin: 0.5em auto 0.5em auto;
+    width: 100%;
+    @include column;
+    img {
+      width: 15%;
+      height: 15%;
+      margin: 1em auto 1em auto;
+    }
+  }
+
+  // page un article
+  .article-present {
+    box-shadow: $box_shadow;
+    @include column;
+    img {
+      margin: 1em auto auto auto;
+      width: 15%;
+      height: 15%;
+    }
+    .article-content {
+      margin: 0.5em auto auto auto;
+      width: 100%;
+    }
+  }
+
+  .comment-div {
+    .post-comment {
+      @include column;
+      margin: 2em;
+      form {
+        input {
+          width: 90%;
+        }
+      }
+      .form-submit {
+        margin: 1em;
+        justify-content: center;
+      }
+    }
+    .form-comment {
+      margin: 0.5em;
+      padding: 0em;
+      @include column;
+      img {
+        margin: 1em auto 0.5em auto;
+        width: 15%;
+        height: 15%;
+      }
+      .comment-card {
+        margin: 0em;
+        padding: 0.5em;
+        width: 100%;
+        h3 {
+          font-size: 0.8em;
+          margin-bottom: 0.7em;
+          .nav-link{
+            margin: 0em;
+          }
+        }
+        p {
+          font-size: 0.8em;
+          margin: 0.5em 0em 0.5em 0em;
+        }
+      }
+    }
+  }
+}
+
+// écrans plus de 360px et moins de 780 px 
+@media #{$small_screen}
+{
+  .container {
+    width: 100%;
+    padding: 1.5em;
+    .comment-card {
+      h3 {
+        font-size: 0.8em;
+        @include column;
+        margin-bottom: 0.5em;
+        a {
+          margin: 0em;
+        }
+      }
+      p {
+        font-size: 1em;
+        margin-top : 2em;
+      }
+      .post-option {
+        margin: 0.5em auto auto auto;
+      }
+    }
+  }
+
+  #root {
+    .mr-auto {
+      a {
+        font-size: 1em;
+      }
+    }
+  }
+
+  // user page
+  .user-page{
+    @include flex_column;
+    .images {
+      margin: auto;
+      width: 60%;
+      img{
+        margin: 0.5em auto 0.5em auto;
+      }
+      button {
+        width: auto;
+        padding: 0.2em;
+      }
+    }
+    .show-article {
+      margin: 2em auto 2em auto;
+      width: 90%;
+    }
+    .user-button {
+      @include row;
+      justify-content: center;
+      box-shadow: none;
+      margin: auto;
+      width: 80%;
+    }
+  }
+
+  .update-image {
+    .addPhotoForm {
+      @include column;
+      input {
+        width: auto;
+        margin: 1em;
+      }
+      button {
+        width: 40%;
+        margin: auto;
+      }
+    }
+    a {
+      margin: auto;
+      width: 50%;
+    }
+  }
+
+  // tous les articles page
+  .article-card {
+    padding: 0em;
+    margin: 0.5em auto 0.5em auto;
+    width: 100%;
+    @include column;
+    img {
+      width: 15%;
+      height: 15%;
+      margin: 1em auto 1em auto;
+    }
+  }
+
+  // page un article
+  .article-present {
+    box-shadow: $box_shadow;
+    @include column;
+    img {
+      margin: 1em auto auto auto;
+      width: 15%;
+      height: 15%;
+    }
+    .article-content {
+      margin: 0.5em auto auto auto;
+      width: 100%;
+    }
+  }
+
+  .comment-div {
+    .post-comment {
+      @include column;
+      margin: 2em;
+      .form-submit {
+        margin: 1em;
+        justify-content: center;
+      }
+    }
+    .form-comment {
+      margin: 0.5em;
+      padding: 0em;
+      @include column;
+      img {
+        margin: 1em auto 0.5em auto;
+        width: 15%;
+        height: 15%;
+      }
+      .comment-card {
+        margin: auto;
+        width: 100%;
+        padding: 0.5em;
+        h3 {
+          font-size: 0.8em;
+
+          a {
+            margin: 0em;
+          }
+        }
+        p {
+          font-size: 0.8em;
+          margin: 0.5em 0em 1em 0em;
+        }
+      }
+    }
+  }
+}
+
+// écrans de plus de 780 px et moins de 1024px
+@media #{$medium_screen}
+{
+  .comment-div {
+    .post-comment {
+      margin: auto;
+      width: 70%;
+    }
+  }
+}

@@ -1,0 +1,963 @@
+@charset "UTF-8";
+/* backgrounds colors */
+/*Paramètres de la barre de navigation*/
+#root a img {
+  width: 50px;
+  margin: 0.6em;
+  border-radius: 50%;
+  border: 1px solid black;
+  text-decoration: none;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  opacity: 0.9;
+  -webkit-transition: -webkit-transform 300ms ease-in-out;
+  transition: -webkit-transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out, -webkit-transform 300ms ease-in-out;
+}
+
+#root a img:hover {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+}
+
+#root .mr-auto a {
+  font-weight: bold;
+  margin-left: 3em;
+}
+
+/*Paramètres du contenu de la page*/
+.container {
+  width: 90%;
+  margin: 1em auto;
+  padding: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.3em;
+  color: indianred;
+}
+
+.container h2 {
+  font-size: 0.9em;
+  text-align: center;
+  color: indianred;
+}
+
+.container p {
+  font-size: 0.9em;
+  text-align: center;
+  color: #454545;
+}
+
+.container p a {
+  font-size: 0.9em;
+  font-weight: bold;
+  color: indianred;
+}
+
+.container p a:hover {
+  color: #6e1313;
+}
+
+.container .post-option {
+  margin: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .post-option button {
+  border: none;
+  margin: 1em;
+}
+
+.container .comment-card {
+  margin-top: 1.5em;
+  padding: 1.5em;
+}
+
+.container .comment-card h2 {
+  font-size: 1.2em;
+}
+
+.container .comment-card h3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.9em;
+}
+
+.container .comment-card h3 a {
+  padding: 0em;
+  margin-left: 0.5em;
+  color: indianred;
+}
+
+.container .comment-card h3 a:hover {
+  color: #6e1313;
+}
+
+.article-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-shadow: 0 0 20px #bababa;
+          box-shadow: 0 0 20px #bababa;
+  margin: 1em;
+  padding: 1em;
+}
+
+.article-card img {
+  width: 10%;
+  height: 10%;
+  margin: 1em;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.article-card .show-article {
+  margin: 0.5em;
+}
+
+.article-card .show-article h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1em;
+  color: black;
+}
+
+.article-card .show-article h2 a {
+  font-weight: bold;
+  padding: 0em;
+  margin-left: 0.5em;
+  color: indianred;
+}
+
+.article-card .show-article h2 a:hover {
+  color: #6e1313;
+}
+
+.article-card .show-article h3 {
+  font-size: 0.9em;
+  color: #454545;
+  text-align: left;
+}
+
+.article-card .show-article p {
+  white-space: pre-line;
+  text-align: left;
+  color: black;
+}
+
+.article-card .show-article #created-at {
+  font-size: 0.8em;
+  color: #454545;
+}
+
+.article-card .show-article a {
+  color: indianred;
+  padding-left: 0em;
+  text-align: left;
+}
+
+.article-card .show-article a:hover {
+  color: #6e1313;
+}
+
+.form-submit {
+  margin: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.form-submit .btn {
+  margin: 0.5em;
+}
+
+.user-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: whitesmoke;
+  padding: 1.3em;
+  margin-top: 1.5em;
+}
+
+.user-page .images {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: baseline;
+      -ms-flex-pack: baseline;
+          justify-content: baseline;
+  width: 20%;
+}
+
+.user-page .images img {
+  width: 60%;
+  margin: 0em auto 0em auto;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.user-page .images button {
+  margin: 0.8em auto 0em auto;
+  width: 60%;
+  padding: 0em;
+}
+
+.user-page .show-article {
+  margin-left: 1em;
+  margin-right: 1em;
+  width: 60%;
+}
+
+.user-page .show-article h2 {
+  font-size: 1em;
+  font-weight: bold;
+  text-align: left;
+}
+
+.user-page .show-article p {
+  white-space: pre-line;
+  text-align: left;
+}
+
+.user-page .user-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  width: 20%;
+  padding: 0.5em;
+  -webkit-box-shadow: 0 0 20px #bababa;
+          box-shadow: 0 0 20px #bababa;
+}
+
+.user-page .user-button p {
+  font-weight: bold;
+}
+
+.user-page .user-button .btn {
+  padding: 0em;
+  margin: 0.5em;
+}
+
+.user-article {
+  background-color: indianred;
+  margin-top: Oem;
+}
+
+.user-article h2 {
+  font-size: 1.1em;
+  text-align: center;
+  font-weight: bold;
+  color: whitesmoke;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.user-article p {
+  font-size: 0.9em;
+  text-align: left;
+  color: #454545;
+}
+
+.user-article a {
+  font-size: 1em;
+  font-weight: bold;
+  color: indianred;
+  color: indianred;
+}
+
+.user-article a:hover {
+  color: #6e1313;
+}
+
+.user-article .user-articles {
+  -webkit-box-shadow: 0 0 20px #bababa;
+          box-shadow: 0 0 20px #bababa;
+  background-color: whitesmoke;
+  margin: 1em;
+  padding: 1.2em;
+}
+
+.user-article .user-articles a {
+  font-weight: bold;
+  padding: 0em 0em 0.5em 0em;
+  color: indianred;
+}
+
+.user-article .user-articles a:hover {
+  color: #6e1313;
+}
+
+.user-article .user-articles p {
+  white-space: pre-line;
+  font-size: 1em;
+  margin-bottom: 0.6em;
+}
+
+.user-article .user-articles h3 {
+  font-size: 0.8em;
+}
+
+.article-present {
+  -webkit-box-shadow: 0 0 20px #bababa;
+          box-shadow: 0 0 20px #bababa;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.article-present img {
+  width: 10%;
+  height: 10%;
+  margin: 1em;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.article-present .article-content {
+  margin-top: 1.5em;
+  padding: 1.5em;
+  width: 80%;
+}
+
+.article-present .article-content h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1em;
+  color: black;
+  margin-bottom: 0.8em;
+}
+
+.article-present .article-content h2 a {
+  font-weight: bold;
+  padding: 0em;
+  margin-left: 0.5em;
+  color: indianred;
+}
+
+.article-present .article-content h2 a:hover {
+  color: #6e1313;
+}
+
+.article-present .article-content p {
+  text-align: left;
+}
+
+.article-present .article-content .article-page {
+  margin: 1em 0em 0em 0em;
+}
+
+.article-present .article-content .article-page .show-article {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  margin-bottom: 0.5em;
+  width: 70%;
+}
+
+.article-present .article-content .article-page .show-article p {
+  white-space: pre-line;
+  text-align: left;
+  margin-bottom: 0.2em;
+}
+
+.article-present .article-content .article-page .show-article a {
+  padding: 0.5em 0em 0.6em 0em;
+  color: indianred;
+  font-size: 0.9em;
+}
+
+.article-present .article-content .article-page .show-article a:hover {
+  color: #6e1313;
+}
+
+.article-present .article-content .article-page .article-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.article-present .article-content .article-page .article-button button {
+  margin: 0.7em;
+}
+
+.article-present .article-content .likes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 1em;
+}
+
+.article-present .article-content .likes button {
+  border: none;
+  background-color: white;
+}
+
+.comment-div {
+  background-color: indianred;
+}
+
+.comment-div h2 {
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 2em;
+  margin-bottom: 1.5em;
+  color: whitesmoke;
+}
+
+.comment-div h3 {
+  font-size: 0.8em;
+  font-weight: bold;
+  color: indianred;
+}
+
+.comment-div p {
+  text-align: left;
+}
+
+.comment-div .post-comment {
+  -webkit-box-shadow: 0 0 20px #bababa;
+          box-shadow: 0 0 20px #bababa;
+  background-color: whitesmoke;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 2em 3em 2em 3em;
+  padding: 1em;
+}
+
+.comment-div .post-comment form input {
+  margin-left: 0.4em;
+}
+
+.comment-div .post-comment .form-submit {
+  margin: 0em 1em 0em 1em;
+}
+
+.comment-div .post-comment .form-submit button {
+  margin: 0em;
+}
+
+.comment-div .form-comment {
+  margin: 1em 4em 1em 4em;
+  background-color: whitesmoke;
+  padding: 0.5em;
+  -webkit-box-shadow: 0 0 20px #bababa;
+          box-shadow: 0 0 20px #bababa;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.comment-div .form-comment img {
+  width: 6%;
+  height: 6%;
+  margin: 1em;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+
+.comment-div .form-comment .comment-card {
+  width: 80%;
+  margin: 0em;
+}
+
+.comment-div .form-comment .comment-card h3 {
+  color: #454545;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.9em;
+}
+
+.comment-div .form-comment .comment-card h3 a {
+  padding: 0em;
+  margin-left: 0.5em;
+}
+
+.comment-div .form-comment .comment-card p {
+  font-size: 0.8em;
+}
+
+.comment-div .form-comment .comment-card .content-comment {
+  font-size: 0.9em;
+  font-weight: bold;
+  white-space: pre-line;
+  margin-bottom: 0.5em;
+}
+
+.comment-div .form-comment .comment-card .post-option {
+  margin: 0em;
+}
+
+.comment-div .form-comment .comment-card .post-option a {
+  font-size: 0.8em;
+  padding: 0.5em;
+  color: indianred;
+}
+
+.comment-div .form-comment .comment-card .post-option a:hover {
+  color: #6e1313;
+}
+
+.update-image {
+  -webkit-box-shadow: 0 0 20px #bababa;
+          box-shadow: 0 0 20px #bababa;
+  margin-top: 1.5em;
+  padding: 2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.update-image .addPhotoForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1em;
+}
+
+.update-image .addPhotoForm input {
+  width: 50%;
+  margin-right: 1em;
+}
+
+.update-image a {
+  margin: 1em;
+  width: 30%;
+}
+
+@media only screen and (max-width: 360px) {
+  .container {
+    width: 100%;
+    padding: 1.5em;
+  }
+  .container .comment-card h3 {
+    font-size: 0.8em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 0.5em;
+  }
+  .container .comment-card h3 a {
+    margin: 0em;
+  }
+  .container .comment-card p {
+    font-size: 1em;
+    margin-top: 2em;
+  }
+  .container .comment-card .post-option {
+    margin: 0.5em auto auto auto;
+  }
+  #root .mr-auto a {
+    font-size: 0.8em;
+    margin-left: 0.7em;
+  }
+  .user-page {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .user-page .images {
+    margin: auto;
+    width: 60%;
+  }
+  .user-page .images img {
+    margin: 0.5em auto 0.5em auto;
+  }
+  .user-page .images button {
+    width: auto;
+    padding: 0.2em;
+  }
+  .user-page .show-article {
+    margin: 2em auto 2em auto;
+    width: 90%;
+  }
+  .user-page .user-button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    margin: auto;
+    width: 80%;
+  }
+  .update-image .addPhotoForm {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .update-image .addPhotoForm input {
+    width: auto;
+    margin: 1em;
+  }
+  .update-image .addPhotoForm button {
+    width: 40%;
+    margin: auto;
+  }
+  .update-image a {
+    margin: auto;
+    width: 50%;
+  }
+  .article-card {
+    padding: 0em;
+    margin: 0.5em auto 0.5em auto;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .article-card img {
+    width: 15%;
+    height: 15%;
+    margin: 1em auto 1em auto;
+  }
+  .article-present {
+    -webkit-box-shadow: 0 0 20px #bababa;
+            box-shadow: 0 0 20px #bababa;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .article-present img {
+    margin: 1em auto auto auto;
+    width: 15%;
+    height: 15%;
+  }
+  .article-present .article-content {
+    margin: 0.5em auto auto auto;
+    width: 100%;
+  }
+  .comment-div .post-comment {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 2em;
+  }
+  .comment-div .post-comment form input {
+    width: 90%;
+  }
+  .comment-div .post-comment .form-submit {
+    margin: 1em;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .comment-div .form-comment {
+    margin: 0.5em;
+    padding: 0em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .comment-div .form-comment img {
+    margin: 1em auto 0.5em auto;
+    width: 15%;
+    height: 15%;
+  }
+  .comment-div .form-comment .comment-card {
+    margin: 0em;
+    padding: 0.5em;
+    width: 100%;
+  }
+  .comment-div .form-comment .comment-card h3 {
+    font-size: 0.8em;
+    margin-bottom: 0.7em;
+  }
+  .comment-div .form-comment .comment-card h3 .nav-link {
+    margin: 0em;
+  }
+  .comment-div .form-comment .comment-card p {
+    font-size: 0.8em;
+    margin: 0.5em 0em 0.5em 0em;
+  }
+}
+
+@media only screen and (max-width: 780px) and (min-width: 360px) {
+  .container {
+    width: 100%;
+    padding: 1.5em;
+  }
+  .container .comment-card h3 {
+    font-size: 0.8em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 0.5em;
+  }
+  .container .comment-card h3 a {
+    margin: 0em;
+  }
+  .container .comment-card p {
+    font-size: 1em;
+    margin-top: 2em;
+  }
+  .container .comment-card .post-option {
+    margin: 0.5em auto auto auto;
+  }
+  #root .mr-auto a {
+    font-size: 1em;
+  }
+  .user-page {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .user-page .images {
+    margin: auto;
+    width: 60%;
+  }
+  .user-page .images img {
+    margin: 0.5em auto 0.5em auto;
+  }
+  .user-page .images button {
+    width: auto;
+    padding: 0.2em;
+  }
+  .user-page .show-article {
+    margin: 2em auto 2em auto;
+    width: 90%;
+  }
+  .user-page .user-button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    margin: auto;
+    width: 80%;
+  }
+  .update-image .addPhotoForm {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .update-image .addPhotoForm input {
+    width: auto;
+    margin: 1em;
+  }
+  .update-image .addPhotoForm button {
+    width: 40%;
+    margin: auto;
+  }
+  .update-image a {
+    margin: auto;
+    width: 50%;
+  }
+  .article-card {
+    padding: 0em;
+    margin: 0.5em auto 0.5em auto;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .article-card img {
+    width: 15%;
+    height: 15%;
+    margin: 1em auto 1em auto;
+  }
+  .article-present {
+    -webkit-box-shadow: 0 0 20px #bababa;
+            box-shadow: 0 0 20px #bababa;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .article-present img {
+    margin: 1em auto auto auto;
+    width: 15%;
+    height: 15%;
+  }
+  .article-present .article-content {
+    margin: 0.5em auto auto auto;
+    width: 100%;
+  }
+  .comment-div .post-comment {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 2em;
+  }
+  .comment-div .post-comment .form-submit {
+    margin: 1em;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .comment-div .form-comment {
+    margin: 0.5em;
+    padding: 0em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .comment-div .form-comment img {
+    margin: 1em auto 0.5em auto;
+    width: 15%;
+    height: 15%;
+  }
+  .comment-div .form-comment .comment-card {
+    margin: auto;
+    width: 100%;
+    padding: 0.5em;
+  }
+  .comment-div .form-comment .comment-card h3 {
+    font-size: 0.8em;
+  }
+  .comment-div .form-comment .comment-card h3 a {
+    margin: 0em;
+  }
+  .comment-div .form-comment .comment-card p {
+    font-size: 0.8em;
+    margin: 0.5em 0em 1em 0em;
+  }
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 780px) {
+  .comment-div .post-comment {
+    margin: auto;
+    width: 70%;
+  }
+}
+/*# sourceMappingURL=App.css.map */
