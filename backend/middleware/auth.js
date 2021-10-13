@@ -1,17 +1,27 @@
-// MODULES
-const env = process.env; // Récupère les variables d'environnement
-const jwt = require("jsonwebtoken"); // Crée et check un token d'identification sécurisé
-// FIN MODULES
+const jwt = require('jsonwebtoken');
 
-// MIDDLEWARE AUTH
-module.exports = (req, res, next) => { // Check si le token est bon
+module.exports = (req, res, next) => {
     try {
-        const token = req.headers.authorization.split(" ")[1];
-        const decodedToken = jwt.verify(token, env.TOKEN);
-        req.userId = docodedToken.userID;
-        res.locals.userID = decodedToken.userID;
-        next();
-    } catch{
-        res.status(401).json({message: 'Requête invalide!'});
+        if (req.headers.authorization.split(' ')[1])
+            token = req.headers.authorization.split(' ')[1]
+        else {
+            token = req.headers.authorization.replace('Bearer', '')
+        }
+        console.log(token)
+        const decodedToken = jwt.verify(token, 'bWFzdXBlcmNsZXNlY3JldGVwb3VydG9rZW5tYWdpcXVlcXVlcGVyc29ubmVpbHBldXRsYWRldmluZXI=');
+        console.log(decodedToken)
+        const userId = decodedToken.userId;
+        if (req.body.userId && req.body.userId !== userId) {
+
+            throw 'Invalid user ID';
+        } else {
+            next();
+        }
+    } catch (error) {
+        res.status(401).json({
+            error: error,
+            token: req.headers.authorization.split(' ')[1]
+
+        });
     }
 };

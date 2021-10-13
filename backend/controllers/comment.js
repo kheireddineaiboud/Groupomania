@@ -1,20 +1,20 @@
 const db = require("../config_db");
-const Comment = db.comments; 
-const User = db.user; 
+const Comment = db.comments;
+const User = db.user;
 
 // logique métier : lire tous les commentaires
 exports.findAllComments = (req, res, next) => {
-    Comment.findAll({where: {articleId: req.params.id}})
+    Comment.findAll({ where: { articleId: req.params.id } })
         .then(comments => {
             console.log(comments);
-            res.status(200).json({data: comments});
+            res.status(200).json({ data: comments });
         })
         .catch(error => res.status(400).json({ error }));
 };
 
 // logique métier : lire un commentaire par son id
 exports.findOneComment = (req, res, next) => {
-    Comment.findOne({ where: {id: req.params.id}})
+    Comment.findOne({ where: { id: req.params.id } })
         .then(comment => {
             console.log(comment);
             res.status(200).json(comment)
@@ -34,7 +34,7 @@ exports.createComment = (req, res, next) => {
     comment.save()
         .then(() => {
             Comment.findAll({
-                where: {articleId: req.body.articleId}
+                where: { articleId: req.body.articleId }
             })
                 .then((comments) => {
                     res.status(200).json(comments);
@@ -45,8 +45,8 @@ exports.createComment = (req, res, next) => {
 
 // Logique métier : supprimer un commentaire
 exports.deleteComment = (req, res, next) => {
-    Comment.destroy({ where: {id: req.params.id} })
-        .then(() => res.status(200).json({ message: 'Commentaire supprimé !'}))
+    Comment.destroy({ where: { id: req.params.id } })
+        .then(() => res.status(200).json({ message: 'Commentaire supprimé !' }))
         .catch(error => res.status(400).json({ error }));
 };
 

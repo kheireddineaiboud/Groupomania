@@ -13,6 +13,6 @@ router.get('/:id/likes', likeCtrl.findAllLikes);
 router.get('/:id', articleCtrl.findOneArticle);
 router.post('/', articleCtrl.createArticle);
 router.put('/:id', articleCtrl.modifyArticle);
-router.delete('/:id',auth, articleCtrl.deleteArticle);
+router.delete('/:id', auth, articleCtrl.deleteArticle);
 
 module.exports = router;
